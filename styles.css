@@ -1,0 +1,43 @@
+/* ======== CENTRAL CSS STYLING & DISPLAY ======== */
+
+:root {
+    /* Website Colors */
+    --website-red: #dd2a2a;
+    --website-white: #f0f0f0;
+
+    /* Website Fonts */
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-lato: "Lato", sans-serif;
+}
+
+/* ----- DISPLAY & STYLING of the HTML page ----- */
+/* 'margin' is interfering with the background display so it is not being tampered with, only padding */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("/pictures/background-image.png");
+    background-position: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: var(--font-montserrat);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* h5 will be used as <p> elements for texts under headers */
+h5 {
+    font-family: var(--font-lato);
+    font-size: 20px;
+}
+
+/* ----- DISPLAY & STYLING of the hero-header ----- */
+
+.hero-header {
+
+}
+
+
+
