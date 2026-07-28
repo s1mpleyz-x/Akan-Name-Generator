@@ -109,6 +109,7 @@ td {
 .error-message {
     color:red;
     line-height: 0;
+    display: none;
 }
 
 label {
@@ -139,6 +140,5 @@ button:hover {
     transform: translateY(1px)scale(1.01);
     
 }
-
 
 
