@@ -89,6 +89,11 @@ td {
     margin-bottom: 15px;
 }
 
+.error-message {
+    color:red;
+    line-height: 0;
+}
+
 label {
     font-family: var(--font-lato);
     font-size: 20px;
