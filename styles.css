@@ -61,7 +61,7 @@ h2 {
 .result-card {
     width: 87%;
     padding: 30px 50px 50px 50px;
-    margin-bottom: 40px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     background-color: var(--website-white);
@@ -138,6 +138,7 @@ button {
 button:hover {
     background-color: var(--website-button-hover-blue);
     transform: translateY(1px)scale(1.01);
+    cursor: pointer;
     
 }
 
