@@ -15,10 +15,10 @@
 
 body {
     margin: 0;
-    padding: 0;
-    background-image: url("/pictures/background-image.png");
+    padding: 0 40px 0 40px;
+    background-image: url("/pictures/section-image.png");
     background-position: center;
-    min-height: 100vh;
+    background-size: cover;
 }
 
 h1 {
@@ -33,11 +33,41 @@ h5 {
     font-size: 20px;
 }
 
-/* ----- DISPLAY & STYLING of the hero-header ----- */
+/* ----- DISPLAY & STYLING of the page-description ----- */
 
-.hero-header {
-
+.page-description {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 80px 20px 80px;
+    background-color: var(--website-white)  ;
 }
 
+/* ----- DISPLAY & STYLING of the main-page ----- */
+
+.main-page {
+    margin-top: 80px;
+}
+
+/* DISPLAY & STYLING of the table */
+table {
+    border: solid 1px black;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 6px;
+    border-right: solid 1px black;
+    border-top: solid 1px black;
+    font-family: var(--font-montserrat);
+}
+
+td {
+    padding: 6px;
+    border-right: solid 1px black;
+    border-top: solid 1px black;
+    font-family: var(--font-lato);
+}
 
 
