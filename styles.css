@@ -1,24 +1,30 @@
-/* ======== CENTRAL CSS STYLING & DISPLAY ======== */
+/* ============== CENTRAL CSS STYLING & DISPLAY ============== */
 
 :root {
     /* Website Colors */
-    --website-red: #dd2a2a;
-    --website-white: #f0f0f0;
+    --website-light-blue:                #ddd9ff;
+    --website-white:                     #fcfcfc;
 
     /* Website Fonts */
     --font-montserrat: "Montserrat", sans-serif;
     --font-lato: "Lato", sans-serif;
 }
 
-/* ----- DISPLAY & STYLING of the HTML page ----- */
+/* ----- DISPLAY & STYLING of the HTML page & elements ----- */
 /* 'margin' is interfering with the background display so it is not being tampered with, only padding */
 
 body {
     margin: 0;
-    padding: 0 40px 0 40px;
+    padding: 40px 70px 40px 40px;
     background-image: url("/pictures/section-image.png");
     background-position: center;
     background-size: cover;
+}
+
+p {
+    font-family: var(--font-lato);
+    font-size: 18px;
+
 }
 
 h1 {
@@ -27,29 +33,29 @@ h1 {
     font-size: 30px;
 }
 
-/* h5 will be used as <p> elements for texts under headers */
-h5 {
-    font-family: var(--font-lato);
+h2 {
+    font-family: var(--font-montserrat);
+    font-weight: bold;
     font-size: 20px;
 }
 
-/* ----- DISPLAY & STYLING of the page-description ----- */
-
-.page-description {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px 80px 20px 80px;
-    background-color: var(--website-white)  ;
-}
-
-/* ----- DISPLAY & STYLING of the main-page ----- */
+/* =========== DISPLAY & STYLING of the main page =========== */
 
 .main-page {
-    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
 }
 
-/* DISPLAY & STYLING of the table */
+/* ----- page-cards ----- */
+.page-card {
+    width: 35%;
+    padding: 30px 50px 50px 50px;
+    background-color: var(--website-white);
+}
+
+/* ----- DISPLAY & STYLING of the table ----- */
+
 table {
     border: solid 1px black;
     border-collapse: collapse;
@@ -70,4 +76,23 @@ td {
     font-family: var(--font-lato);
 }
 
+/* ----- DISPLAY & STYLING of the form elements ----- */
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+label {
+    font-family: var(--font-lato);
+    font-size: 20px;
+}
+
+input {
+    font-size: 20px;
+    font-family: var(--font-lato);
+    padding: 10px 0 10px 10px;
+}
 
