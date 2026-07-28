@@ -4,7 +4,8 @@
     /* Website Colors */
     --website-light-blue:                #ddd9ff;
     --website-white:                     #fcfcfc;
-    --website-button-blue:               #3e94e6;
+    --website-button-blue:               #00b7ff;
+    --website-button-hover-blue:         #15a8e2;
 
     /* Website Fonts */
     --font-montserrat: "Montserrat", sans-serif;
@@ -54,6 +55,7 @@ h2 {
     width: 35%;
     padding: 30px 50px 50px 50px;
     background-color: var(--website-white);
+    border-radius: 40px;
 }
 
 /* ----- DISPLAY & STYLING of the table ----- */
@@ -99,10 +101,22 @@ input {
 }
 
 button {
-    background-color: var(--website-button-blue);
     text-decoration: none;
-    border: none;
-    font-size: 20px;
+    font-family: var(--font-montserrat);
+    font-size: 18px;
+    font-weight: bold;
     padding: 10px;
+    background-color: var(--website-button-blue);
+    border: none;
+
+    margin-top: 20px;
 }
+
+button:hover {
+    background-color: var(--website-button-hover-blue);
+    transform: translateY(1px)scale(1.01);
+    
+}
+
+
 
