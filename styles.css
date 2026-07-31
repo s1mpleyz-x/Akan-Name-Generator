@@ -18,7 +18,7 @@
 body {
     margin: 0;
     padding: 40px 70px 40px 40px;
-    background-image: url("/pictures/section-image.png");
+    background-image: url("./pictures/section-image.png");
     background-position: center;
     background-size: cover;
 }
