@@ -38,21 +38,63 @@ akanForm.addEventListener('submit', function(event) {
     formSection.style.display = "block";
 
     function determineName(gender, d) {
-        const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-        const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
-        switch (true) {
-            case gender === "male":
-                return maleNames[d];
-                break;
-            case gender === "female":
-                return femaleNames[d];
-                break;
-            default:
-                console.log("Error: No valid gender value.");
-                return null;
+        const akanDays = [
+            {
+                day: "Sunday", 
+                maleName: "Kwasi",
+                femaleName: "Akosua",
+                description: "Those born on Sunday are traditionally seen as natural leaders — charismatic, confident, and drawn to the spotlight. Kwasi and Akosua are often described as courageous and quick to take initiative, with a warmth that draws others toward them."
+            },
+            {
+                day: "Monday",
+                maleName: "Kwadwo",
+                femaleName: "Adwoa",
+                description: "Monday-born individuals are associated with calm, peaceful temperaments. Kwadwo and Adwoa are often seen as gentle, thoughtful, and even-tempered — the steady, reassuring presence in a room."
+            },
+            {
+                day: "Tuesday",
+                maleName: "Kwabena",
+                femaleName: "Abenaa",
+                description: "Tuesday carries a reputation for fierce, fiery energy. Kwabena and Abenaa are often described as bold and assertive, unafraid of confrontation, with a strong sense of justice and a fighting spirit."
+            },
+            {
+                day: "Wednesday",
+                maleName: "Kwaku",
+                femaleName: "Akua",
+                description: "Those born on Wednesday are linked to wit, cleverness, and a touch of mischief. Kwaku and Akua are often seen as sharp-minded problem-solvers, resourceful and quick to find a clever way around any obstacle."
+            },
+            {
+                day: "Thursday",
+                maleName: "Yaw",
+                femaleName: "Yaa",
+                description: "Thursday-born individuals are associated with strength, courage, and quiet resilience. Yaw and Yaa are often described as steady under pressure, dependable, and carrying an inner toughness that others lean on."
+            },
+            {
+                day: "Friday",
+                maleName: "Kofi",
+                femaleName: "Afua",
+                description: "Friday carries associations with adventure and exploration. Kofi and Afua are often seen as free-spirited and curious, drawn to travel, new experiences, and a restless desire to see what's beyond the horizon."  
+            },
+            {
+                day: "Saturday",
+                maleName: "Kwame",
+                femaleName: "Ama",
+                description: "Saturday-born individuals are traditionally tied to strength and resilience, often described as having an old soul. Kwame and Ama are seen as wise beyond their years, disciplined, and carrying a quiet, enduring inner strength." 
+            }
+        ]
+
+        const dayData = akanDays[d];
+
+        if (gender !== "male" && gender !== "female") {
+            return { name: null, description: "No valid gender value provided." };
         }
+        
+        const name = dayData[`$[gender]Name`]; // Bracket notation instead of the dot notation
+        
+        return { name: name, description: dayData.description};
     }
 
     formResult.textContent = determineName(gender, dayOfTheWeek);
+    
 })
