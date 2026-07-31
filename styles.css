@@ -146,4 +146,6 @@ button:hover {
     
 }
 
-
+.submission-message {
+    display: none;
+}

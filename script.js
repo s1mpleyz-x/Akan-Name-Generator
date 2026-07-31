@@ -34,8 +34,11 @@ akanForm.addEventListener('submit', function(event) {
     let formSection = document.querySelector(".result-card");
     let formResult = document.querySelector(".name-generated");
     let formDescription = document.querySelector(".name-description");
+    let formSubmissionMessage = document.querySelector(".submission-message");
 
     formSection.style.display = "block";
+    formSubmissionMessage.style.display = "block"
+    
 
     function determineName(gender, d) {
 
