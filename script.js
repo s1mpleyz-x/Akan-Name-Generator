@@ -1,3 +1,5 @@
-const form = 
+const akanForm = document.getElementById("generator-form");
 
-document.getElementsByClassName("")
+akanForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Stops the page from reloading
+})
