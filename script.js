@@ -8,6 +8,9 @@ akanForm.addEventListener('submit', function(event) {
     const year = document.getElementById('yob');
 
     const genderInput = document.querySelector('input[name="gender"]:checked');
-    const gender = genderInput ? genderInput.value : null;
+    const gender = genderInput ? genderInput.value : null; // Manually checks for any gender input if for whatever reason the browser fails to
+
+    let CC = (year.value).slice(0,2);
+    console.log(CC);
 
 })
