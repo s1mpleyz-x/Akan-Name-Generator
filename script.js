@@ -1,7 +1,7 @@
 const akanForm = document.getElementById("generator-form");
 
 akanForm.addEventListener('submit', function(event) {
-    console.log("Handler fired!");
+    console.log("Handler fired!"); // Confirms the function is running before the rest of the code
     event.preventDefault(); // Stops the page from reloading
 
     const day = document.getElementById('dob'); // Fetches the INPUT of the day, not its actual value
@@ -32,4 +32,8 @@ akanForm.addEventListener('submit', function(event) {
     let dayOfTheWeek = ((term1 - 2 * CC - 1) + term2 + term3 + DD) % 7;
     console.log(dayOfTheWeek);
 
+    let formSection = document.querySelector(".result-card");
+    let formResult = document.querySelector(".name-generated");
+
+    formSection.style.display = "block";
 })
