@@ -34,6 +34,7 @@ akanForm.addEventListener('submit', function(event) {
 
     let formSection = document.querySelector(".result-card");
     let formResult = document.querySelector(".name-generated");
+    let formDescription = document.querySelector(".name-description");
 
     formSection.style.display = "block";
 
@@ -92,9 +93,14 @@ akanForm.addEventListener('submit', function(event) {
         
         const name = dayData[`$[gender]Name`]; // Bracket notation instead of the dot notation
         
-        return { name: name, description: dayData.description};
+        return { name: name, description: dayData.description };
     }
 
-    formResult.textContent = determineName(gender, dayOfTheWeek);
-    
+    const akanFormResult = determineName(gender, dayOfTheWeek); // Storing the return of the objects in a variable to access them
+
+    formResult.textContent = akanFormResult.name;
+    formDescription.textContent = akanFormResult.description;
+
+    // Running the function twice to access the objects is inefficient, more effective to run the function once and store the objects in a variable for future access
+
 })
