@@ -36,4 +36,23 @@ akanForm.addEventListener('submit', function(event) {
     let formResult = document.querySelector(".name-generated");
 
     formSection.style.display = "block";
+
+    function determineName(gender, d) {
+        const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+        const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+
+        switch (true) {
+            case gender === "male":
+                return maleNames[d];
+                break;
+            case gender === "female":
+                return femaleNames[d];
+                break;
+            default:
+                console.log("Error: No valid gender value.");
+                return null;
+        }
+    }
+
+    formResult.textContent = determineName(gender, dayOfTheWeek);
 })
