@@ -1,6 +1,7 @@
 const akanForm = document.getElementById("generator-form");
 
 akanForm.addEventListener('submit', function(event) {
+    console.log("Handler fired!");
     event.preventDefault(); // Stops the page from reloading
 
     const day = document.getElementById('dob'); // Fetches the INPUT of the day, not its actual value
@@ -10,16 +11,25 @@ akanForm.addEventListener('submit', function(event) {
     const genderInput = document.querySelector('input[name="gender"]:checked');
     const gender = genderInput ? genderInput.value : null; // Manually checks for any gender input if for whatever reason the browser fails to
 
-    let CC = (year.value).slice(0,2); // .slice() method that fetches the actual input
+    let CC = Number((year.value).slice(0,2)); // .slice() method that fetches the actual input
     console.log(CC);
 
-    let YY = (year.value).slice(2,4);
+    let YY = Number((year.value).slice(2,4)); // Number to make sure the data type is actually a number
     console.log(YY);
 
-    let MM = month.value;
+    let MM = Number(month.value);
     console.log(MM);
 
-    let d = (((CC / 4) - 2 * CC - 1) + ((5 * YY) / 4​) + ((26 * (MM + 1)) / 10​) + DD) % 7;
-    console.log(d);
+    let DD = Number(day.value);
+    console.log(DD);
+
+    console.log(gender);
+
+    const term1 = Math.floor(CC / 4); // Rounds to the nearest whole number DOWNWARDS
+    const term2 = Math.floor((5 * YY) / 4);
+    const term3 = Math.floor((26 * (MM + 1)) / 10);
+
+    let dayOfTheWeek = ((term1 - 2 * CC - 1) + term2 + term3 + DD) % 7;
+    console.log(dayOfTheWeek);
 
 })
