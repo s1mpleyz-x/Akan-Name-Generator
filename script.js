@@ -1,7 +1,9 @@
+// ------------------------------ FORM SUBMISSION EVENT HANDLER ------------------------------ \\
+
 const akanForm = document.getElementById("generator-form");
 
 akanForm.addEventListener('submit', function(event) {
-    console.log("Handler fired!"); // Confirms the function is running before the rest of the code
+    console.log("Handler fired!"); // Confirms the function is running
     event.preventDefault(); // Stops the page from reloading
 
     const day = document.getElementById('dob'); // Fetches the INPUT of the day, not its actual value
@@ -25,11 +27,8 @@ akanForm.addEventListener('submit', function(event) {
 
     console.log(gender);
 
-    const term1 = Math.floor(CC / 4); // Rounds to the nearest whole number DOWNWARDS
-    const term2 = Math.floor((5 * YY) / 4);
-    const term3 = Math.floor((26 * (MM + 1)) / 10);
+    let dayOfTheWeek = Math.floor((((CC / 4) - 2) * (CC - 1)) + ((5 * YY) / 4) + ((26 * (MM + 1)) / 10) + DD) % 7; // Math.floor() returns the nearest whole number DOWNWARDS
 
-    let dayOfTheWeek = ((term1 - 2 * CC - 1) + term2 + term3 + DD) % 7;
     console.log(dayOfTheWeek);
 
     let formSection = document.querySelector(".result-card");
@@ -91,12 +90,14 @@ akanForm.addEventListener('submit', function(event) {
             return { name: null, description: "No valid gender value provided." };
         }
         
-        const name = dayData[`$[gender]Name`]; // Bracket notation instead of the dot notation
+        const akanResultName = dayData[`${gender}Name`]; // Bracket notation instead of the dot notation
         
-        return { name: name, description: dayData.description };
+        return { name: akanResultName, description: dayData.description };
     }
 
     const akanFormResult = determineName(gender, dayOfTheWeek); // Storing the return of the objects in a variable to access them
+
+    console.log(akanFormResult.name);
 
     formResult.textContent = akanFormResult.name;
     formDescription.textContent = akanFormResult.description;
@@ -104,3 +105,22 @@ akanForm.addEventListener('submit', function(event) {
     // Running the function twice to access the objects is inefficient, more effective to run the function once and store the objects in a variable for future access
 
 })
+
+// ------------------------------ INPUT ERROR EVENT HANDLER ------------------------------ \\
+
+const inputsToValidate = akanForm.querySelectorAll("input");
+
+inputsToValidate.forEach(function(input) {
+    input.addEventListener('invalid', function(event) {
+        event.preventDefault(); // Stops the native browser tooltip errors from appearing
+        const errorMsg = input.closest(".form-section")?.nextElementSibling || input.nextElementSibling;
+        errorMsg.style.display = "block";
+    });
+
+    input.addEventListener('input', function() {
+        if (input.checkValidity()) {
+            const errorMsg = input.closest(".form-section")?.nextElementSibling || input.nextElementSibling;
+            errorMsg.style.display = "none";
+        }
+    });
+});

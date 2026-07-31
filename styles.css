@@ -71,8 +71,12 @@ h2 {
 
 .result-sections {
     display: flex;
-    justify-content: center;
-    gap: 500px;
+    justify-content: space-between;
+}
+
+.result-section-one, .result-section-two {
+    flex: 1;
+    min-width: 0; 
 }
 
 /* ----- DISPLAY & STYLING of the table ----- */
