@@ -31,4 +31,5 @@ Akan day names are traditional Ghanaian names assigned based on the day of the w
 ## License
 [MIT License](LICENSE)
 
+## Showcase of the project
 ![App Screenshot](./pictures/app-screenshot.png)
